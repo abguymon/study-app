@@ -26,7 +26,7 @@
 	"type": "module",
 	"dependencies": {
 		"date-fns": "^3.6.0",
-		"fullcalendar": "^6.1.11"
+		"fullcalendar": "^6.1.11",
 		"firebase": "^10.11.0"
 	}
 }
