@@ -1,4 +1,6 @@
 <script>
+    import Calendar from "../../calendar.svelte";
+
     let timerInterval;
     let hours = 0;
     let minutes = 0;
@@ -48,4 +50,3 @@
   <button on:click={startTimer}>Start</button>
   <button on:click={stopTimer}>Stop</button>
   <button on:click={resetTimer}>Reset</button>
-  
