@@ -5,7 +5,7 @@
 
 <header>
 	<div class="corner">
-		STUDY APP
+		STUDDY BUDDY
 	</div>
 
 	<nav>
@@ -19,6 +19,14 @@
 			<li aria-current={$page.url.pathname === '/timer' ? 'page' : undefined}>
 				<a href="/timer">Timer</a>
 			</li>
+			<li aria-current={$page.url.pathname === '/notes' ? 'page' : undefined}>
+				<a href="/notes">Notes</a>
+			</li>
+			<li aria-current={$page.url.pathname === '/assignments' ? 'page' : undefined}>
+				<a href="/assignments">Assignments</a>
+			</li>
+			
+			
 		</ul>
 	</nav>
 
