@@ -1,11 +1,13 @@
 <script>
 	import { page } from '$app/stores';
 	import github from '$lib/images/github.svg';
+	import logo from '$lib/images/studdybuddylogowhite.png'
+	import transparent_logo from '$lib/images/logotransparent.png'
 </script>
 
 <header>
 	<div class="corner">
-		STUDDY BUDDY
+		<!-- <img src={transparent_logo} alt="Studdybuddy" /> -->
 	</div>
 
 	<nav>

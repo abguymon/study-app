@@ -2,46 +2,46 @@
 	import Header from "./Header.svelte";
 	import "./styles.css";
 	import { onMount } from "svelte";
-	import { session } from "$lib/session";
+	// import { session } from "$lib/session";
 	import { goto } from "$app/navigation";
-	import { signOut } from "firebase/auth";
-	import { auth } from "$lib/firebase.client";
+	// import { signOut } from "firebase/auth";
+	// import { auth } from "$lib/firebase.client";
 
 	export let data;
 
 	let loading = true;
 	let loggedIn = false;
 
-	session.subscribe((cur) => {
-		loading = cur?.loading;
-		loggedIn = cur?.loggedIn;
-	});
+	// session.subscribe((cur) => {
+	// 	loading = cur?.loading;
+	// 	loggedIn = cur?.loggedIn;
+	// });
 
-	onMount(async () => {
-		const user = await data.getAuthUser();
+	// onMount(async () => {
+	// 	const user = await data.getAuthUser();
 
-		const loggedIn = !!user && user?.emailVerified;
-		session.update((cur) => {
-			loading = false;
-			return {
-				...cur,
-				user,
-				loggedIn,
-				loading: false,
-			};
-		});
+	// 	const loggedIn = !!user && user?.emailVerified;
+	// 	session.update((cur) => {
+	// 		loading = false;
+	// 		return {
+	// 			...cur,
+	// 			user,
+	// 			loggedIn,
+	// 			loading: false,
+	// 		};
+	// 	});
 
-		if (loggedIn) {
-			goto("/");
-		}
-	});
+	// 	if (loggedIn) {
+	// 		goto("/");
+	// 	}
+	// });
 </script>
 
 <div class="app">
 	<Header />
 
 	<main>
-		{#if loading}
+		<!-- {#if loading}
 			<div>Loading...</div>
 		{:else if loggedIn}
 			<button
@@ -67,7 +67,7 @@
 			>
 				Login
 			</button>
-		{/if}
+		{/if} -->
 		<slot />
 	</main>
 

@@ -2,6 +2,7 @@
 	// import Counter from './Counter.svelte';
 	// import welcome from '$lib/images/svelte-welcome.webp';
 	// import welcome_fallback from '$lib/images/svelte-welcome.png';
+ 	import logo from '$lib/images/logotransparent.png'
 </script>
 
 <svelte:head>
@@ -10,7 +11,8 @@
 </svelte:head>
 
 <section>
-	<h1>Welcome to my Study App</h1>
+	<img src= {logo} alt='Studdy Buddy'>
+	<h1>Welcome to Studdy Buddy!</h1>
 
 	<!-- <Counter />  -->
 </section>
