@@ -21,7 +21,7 @@
 <h1>Assignments</h1>
 <form on:submit|preventDefault={handleSubmit}>
     <label>
-        assignment:
+        Assignment:
         <input type="text" bind:value={name} />
     </label>
     <br>
