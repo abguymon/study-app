@@ -1,12 +1,11 @@
 <script>
 	import { page } from '$app/stores';
 	import github from '$lib/images/github.svg';
-	import logo from '$lib/images/studdybuddylogowhite.png'
-	import transparent_logo from '$lib/images/logotransparent.png'
+    import AuthControl from './AuthControl.svelte';
 </script>
 
 <header>
-	<div class="corner">
+	<div class="corner left-corner">
 		<!-- <img src={transparent_logo} alt="Studdybuddy" /> -->
 	</div>
 
@@ -27,12 +26,11 @@
 			<li aria-current={$page.url.pathname === '/assignments' ? 'page' : undefined}>
 				<a href="/assignments">Assignments</a>
 			</li>
-			
-			
 		</ul>
 	</nav>
 
-	<div class="corner">
+	<div class="corner right-corner">
+        <AuthControl />
 		<a href="https://github.com/abguymon/study-app">
 			<img src={github} alt="GitHub" />
 		</a>
@@ -41,14 +39,29 @@
 
 <style>
 	header {
-		display: flex;
-		justify-content: space-between;
+		display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        width: 100%;
 	}
 
 	.corner {
 		width: 3em;
 		height: 3em;
+        display: flex;
+        align-items: center;
 	}
+
+    .left-corner {
+        justify-self: start;
+    }
+
+    .right-corner {
+        justify-self: end;
+        display: flex;
+        align-items: center;
+        width: auto; /* Allow expanding for AuthControl */
+    }
 
 	.corner a {
 		display: flex;
@@ -57,6 +70,10 @@
 		width: 100%;
 		height: 100%;
 	}
+
+    .right-corner a {
+        width: 3em;
+    }
 
 	.corner img {
 		width: 2em;
@@ -67,6 +84,7 @@
 	nav {
 		display: flex;
 		justify-content: center;
+        justify-self: center; /* Center in the middle grid column */
 		--background: rgba(255, 255, 255, 0.7);
 	}
 
