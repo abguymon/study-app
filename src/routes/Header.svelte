@@ -5,7 +5,7 @@
 </script>
 
 <header>
-	<div class="corner">
+	<div class="corner left-corner">
 		<!-- <img src={transparent_logo} alt="Studdybuddy" /> -->
 	</div>
 
@@ -39,20 +39,28 @@
 
 <style>
 	header {
-		display: flex;
-		justify-content: space-between;
+		display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        width: 100%;
 	}
 
 	.corner {
 		width: 3em;
 		height: 3em;
-	}
-
-    .right-corner {
         display: flex;
         align-items: center;
-        /* Width auto to fit both items */
-        width: auto;
+	}
+
+    .left-corner {
+        justify-self: start;
+    }
+
+    .right-corner {
+        justify-self: end;
+        display: flex;
+        align-items: center;
+        width: auto; /* Allow expanding for AuthControl */
     }
 
 	.corner a {
@@ -63,7 +71,6 @@
 		height: 100%;
 	}
 
-    /* Target the github link specifically if needed, or adjust spacing */
     .right-corner a {
         width: 3em;
     }
@@ -77,6 +84,7 @@
 	nav {
 		display: flex;
 		justify-content: center;
+        justify-self: center; /* Center in the middle grid column */
 		--background: rgba(255, 255, 255, 0.7);
 	}
 
