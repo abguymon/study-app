@@ -1,0 +1,40 @@
+
+> study-app@0.0.1 dev
+> vite dev
+
+
+  VITE v5.4.21  ready in 897 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+9:19:31 PM [vite-plugin-svelte] /app/src/routes/assignments/+page.svelte:119:8 A11y: visible, non-interactive elements with an on:click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as <button type="button"> or <a> might be more appropriate. See https://svelte.dev/docs/accessibility-warnings#a11y-click-events-have-key-events for more details.
+9:19:31 PM [vite-plugin-svelte] /app/src/routes/assignments/+page.svelte:119:8 A11y: <div> with click handler must have an ARIA role
+9:19:31 PM [vite-plugin-svelte] /app/src/routes/assignments/+page.svelte:118:4 A11y: visible, non-interactive elements with an on:click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as <button type="button"> or <a> might be more appropriate. See https://svelte.dev/docs/accessibility-warnings#a11y-click-events-have-key-events for more details.
+9:19:31 PM [vite-plugin-svelte] /app/src/routes/assignments/+page.svelte:118:4 A11y: <div> with click handler must have an ARIA role
+Assignments store: user updated null
+9:19:32 PM [vite-plugin-svelte] /app/src/routes/assignments/+page.svelte:119:8 A11y: visible, non-interactive elements with an on:click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as <button type="button"> or <a> might be more appropriate. See https://svelte.dev/docs/accessibility-warnings#a11y-click-events-have-key-events for more details.
+9:19:32 PM [vite-plugin-svelte] /app/src/routes/assignments/+page.svelte:119:8 A11y: <div> with click handler must have an ARIA role
+9:19:32 PM [vite-plugin-svelte] /app/src/routes/assignments/+page.svelte:118:4 A11y: visible, non-interactive elements with an on:click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as <button type="button"> or <a> might be more appropriate. See https://svelte.dev/docs/accessibility-warnings#a11y-click-events-have-key-events for more details.
+9:19:32 PM [vite-plugin-svelte] /app/src/routes/assignments/+page.svelte:118:4 A11y: <div> with click handler must have an ARIA role
+9:20:04 PM [vite-plugin-svelte] /app/src/routes/notes/+page.svelte:84:8 A11y: visible, non-interactive elements with an on:click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as <button type="button"> or <a> might be more appropriate. See https://svelte.dev/docs/accessibility-warnings#a11y-click-events-have-key-events for more details.
+9:20:04 PM [vite-plugin-svelte] /app/src/routes/notes/+page.svelte:84:8 A11y: <div> with click handler must have an ARIA role
+9:20:04 PM [vite-plugin-svelte] /app/src/routes/notes/+page.svelte:93:8 A11y: visible, non-interactive elements with an on:click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as <button type="button"> or <a> might be more appropriate. See https://svelte.dev/docs/accessibility-warnings#a11y-click-events-have-key-events for more details.
+9:20:04 PM [vite-plugin-svelte] /app/src/routes/notes/+page.svelte:93:8 A11y: <div> with click handler must have an ARIA role
+9:20:04 PM [vite-plugin-svelte] /app/src/routes/notes/+page.svelte:92:4 A11y: visible, non-interactive elements with an on:click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as <button type="button"> or <a> might be more appropriate. See https://svelte.dev/docs/accessibility-warnings#a11y-click-events-have-key-events for more details.
+9:20:04 PM [vite-plugin-svelte] /app/src/routes/notes/+page.svelte:92:4 A11y: <div> with click handler must have an ARIA role
+9:20:04 PM [vite-plugin-svelte] /app/src/routes/notes/+page.svelte:84:8 A11y: visible, non-interactive elements with an on:click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as <button type="button"> or <a> might be more appropriate. See https://svelte.dev/docs/accessibility-warnings#a11y-click-events-have-key-events for more details.
+9:20:04 PM [vite-plugin-svelte] /app/src/routes/notes/+page.svelte:84:8 A11y: <div> with click handler must have an ARIA role
+9:20:04 PM [vite-plugin-svelte] /app/src/routes/notes/+page.svelte:93:8 A11y: visible, non-interactive elements with an on:click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as <button type="button"> or <a> might be more appropriate. See https://svelte.dev/docs/accessibility-warnings#a11y-click-events-have-key-events for more details.
+9:20:04 PM [vite-plugin-svelte] /app/src/routes/notes/+page.svelte:93:8 A11y: <div> with click handler must have an ARIA role
+9:20:04 PM [vite-plugin-svelte] /app/src/routes/notes/+page.svelte:92:4 A11y: visible, non-interactive elements with an on:click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as <button type="button"> or <a> might be more appropriate. See https://svelte.dev/docs/accessibility-warnings#a11y-click-events-have-key-events for more details.
+9:20:04 PM [vite-plugin-svelte] /app/src/routes/notes/+page.svelte:92:4 A11y: <div> with click handler must have an ARIA role
+9:20:47 PM [vite] hmr update /src/routes/assignments/+page.svelte
+9:20:53 PM [vite] hmr update /src/routes/assignments/+page.svelte
+9:21:28 PM [vite-plugin-svelte] /app/src/routes/assignments/+page.svelte:114:8 A11y: visible, non-interactive elements with an on:click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as <button type="button"> or <a> might be more appropriate. See https://svelte.dev/docs/accessibility-warnings#a11y-click-events-have-key-events for more details.
+9:21:28 PM [vite-plugin-svelte] /app/src/routes/assignments/+page.svelte:114:8 A11y: <div> with click handler must have an ARIA role
+9:21:28 PM [vite-plugin-svelte] /app/src/routes/assignments/+page.svelte:113:4 A11y: visible, non-interactive elements with an on:click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as <button type="button"> or <a> might be more appropriate. See https://svelte.dev/docs/accessibility-warnings#a11y-click-events-have-key-events for more details.
+9:21:28 PM [vite-plugin-svelte] /app/src/routes/assignments/+page.svelte:113:4 A11y: <div> with click handler must have an ARIA role
+9:21:28 PM [vite-plugin-svelte] /app/src/routes/assignments/+page.svelte:114:8 A11y: visible, non-interactive elements with an on:click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as <button type="button"> or <a> might be more appropriate. See https://svelte.dev/docs/accessibility-warnings#a11y-click-events-have-key-events for more details.
+9:21:28 PM [vite-plugin-svelte] /app/src/routes/assignments/+page.svelte:114:8 A11y: <div> with click handler must have an ARIA role
+9:21:28 PM [vite-plugin-svelte] /app/src/routes/assignments/+page.svelte:113:4 A11y: visible, non-interactive elements with an on:click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as <button type="button"> or <a> might be more appropriate. See https://svelte.dev/docs/accessibility-warnings#a11y-click-events-have-key-events for more details.
+9:21:28 PM [vite-plugin-svelte] /app/src/routes/assignments/+page.svelte:113:4 A11y: <div> with click handler must have an ARIA role

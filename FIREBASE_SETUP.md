@@ -11,6 +11,7 @@ npm run setup:firebase
 ```
 
 This script will:
+
 - Check for and install Firebase CLI if needed
 - Initialize Firebase in your project
 - Create Firestore security rules
@@ -18,6 +19,7 @@ This script will:
 - Guide you through the remaining manual steps
 
 **Note:** You'll still need to manually:
+
 1. Create a Firebase project in the [Firebase Console](https://console.firebase.google.com/) (if you don't have one)
 2. Enable Authentication (Email/Password)
 3. Enable Firestore Database
@@ -51,8 +53,8 @@ If you prefer to set up Firebase manually, follow these steps:
 2. Click **Create database**.
 3. Choose a location for your database.
 4. Select **Start in production mode** or **Start in test mode**.
-   *   **Test mode** allows open access during development but is insecure for production.
-   *   **Production mode** denies access by default. You will need to set up security rules.
+   - **Test mode** allows open access during development but is insecure for production.
+   - **Production mode** denies access by default. You will need to set up security rules.
 
 ### Firestore Security Rules
 

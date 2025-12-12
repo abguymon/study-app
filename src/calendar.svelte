@@ -1,10 +1,12 @@
 <!-- Calendar.svelte -->
 <script>
-    import { onMount, onDestroy } from 'svelte';
+    import { onMount, onDestroy, createEventDispatcher } from 'svelte';
     import { Calendar } from '@fullcalendar/core';
     import dayGridPlugin from '@fullcalendar/daygrid';
   
     export let assignments = [];
+
+    const dispatch = createEventDispatcher();
   
     let calendar;
     let calendarEl;
@@ -16,10 +18,14 @@
     // We can use a reactive statement to update events
     $: if (calendar && assignments) {
         calendar.removeAllEvents();
-        calendar.addEventSource(assignments.map(({ name, dueDate }) => ({
+        calendar.addEventSource(assignments.map(({ id, name, dueDate, description }) => ({
+            id: id,
             title: name,
             start: dueDate,
-            allDay: true
+            allDay: true,
+            extendedProps: {
+                description
+            }
         })));
     }
 
@@ -29,11 +35,24 @@
         calendar = new Calendar(calendarEl, {
             plugins: [dayGridPlugin],
             initialView: 'dayGridMonth',
-            events: assignments.map(({ name, dueDate }) => ({
+            events: assignments.map(({ id, name, dueDate, description }) => ({
+                id: id,
                 title: name,
                 start: dueDate,
-                allDay: true
-            }))
+                allDay: true,
+                extendedProps: {
+                    description
+                }
+            })),
+            eventClick: (info) => {
+                dispatch('eventClick', {
+                    id: info.event.id,
+                    title: info.event.title,
+                    start: info.event.start,
+                    description: info.event.extendedProps.description,
+                    originalEvent: info.event
+                });
+            }
         });
         calendar.render();
     }
