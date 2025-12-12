@@ -1,17 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	import github from '$lib/images/github.svg';
-	import { user } from '$lib/stores/auth';
-	import { auth } from '$lib/firebase';
-	import { signOut } from 'firebase/auth';
-
-	async function handleLogout() {
-		try {
-			await signOut(auth);
-		} catch (e) {
-			console.error(e);
-		}
-	}
+    import AuthControl from './AuthControl.svelte';
 </script>
 
 <header>
@@ -36,21 +26,11 @@
 			<li aria-current={$page.url.pathname === '/assignments' ? 'page' : undefined}>
 				<a href="/assignments">Assignments</a>
 			</li>
-			
-			{#if $user}
-				<li>
-					<button class="logout-btn" on:click={handleLogout}>Logout</button>
-				</li>
-			{:else}
-				<li aria-current={$page.url.pathname === '/login' ? 'page' : undefined}>
-					<a href="/login">Login</a>
-				</li>
-			{/if}
-			
 		</ul>
 	</nav>
 
-	<div class="corner">
+	<div class="corner right-corner">
+        <AuthControl />
 		<a href="https://github.com/abguymon/study-app">
 			<img src={github} alt="GitHub" />
 		</a>
@@ -68,6 +48,13 @@
 		height: 3em;
 	}
 
+    .right-corner {
+        display: flex;
+        align-items: center;
+        /* Width auto to fit both items */
+        width: auto;
+    }
+
 	.corner a {
 		display: flex;
 		align-items: center;
@@ -75,6 +62,11 @@
 		width: 100%;
 		height: 100%;
 	}
+
+    /* Target the github link specifically if needed, or adjust spacing */
+    .right-corner a {
+        width: 3em;
+    }
 
 	.corner img {
 		width: 2em;
@@ -118,7 +110,7 @@
 		border-top: var(--size) solid var(--color-theme-1);
 	}
 
-	nav a, .logout-btn {
+	nav a {
 		display: flex;
 		height: 100%;
 		align-items: center;
@@ -130,12 +122,9 @@
 		letter-spacing: 0.1em;
 		text-decoration: none;
 		transition: color 0.2s linear;
-        background: none;
-        border: none;
-        cursor: pointer;
 	}
 
-	a:hover, .logout-btn:hover {
+	a:hover {
 		color: var(--color-theme-1);
 	}
 </style>
