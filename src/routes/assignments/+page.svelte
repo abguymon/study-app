@@ -1,17 +1,21 @@
 <script>
     import Calendar from "../../calendar.svelte";
+    import { assignments } from "$lib/stores/assignments";
+    import { user } from "$lib/stores/auth";
 
-    
-    const assignments = [
-      { name: 'Assignment 1', dueDate: new Date(2024, 3, 10) }, // April 10, 2024
-      { name: 'Assignment 2', dueDate: new Date(2024, 3, 15) }, // April 15, 2024
-      { name: 'Assignment 3', dueDate: new Date(2024, 3, 20) }  // April 20, 2024
-      // Add more assignments as needed
-    ];
-    let name=""
-    let dueDate=""
+    let name="";
+    let dueDate="";
+
     function handleSubmit(){
-        console.log("submit")
+        if (!name || !dueDate) return;
+
+        assignments.add({
+            name,
+            dueDate: new Date(dueDate)
+        });
+
+        name = "";
+        dueDate = "";
     }
 
 </script>
@@ -19,6 +23,11 @@
     <title>Assignments</title>
 </svelte:head>
 <h1>Assignments</h1>
+
+{#if !$user}
+    <p><i>You are not logged in. Assignments will be saved to your browser.</i></p>
+{/if}
+
 <form on:submit|preventDefault={handleSubmit}>
     <label>
         Assignment:
@@ -32,4 +41,6 @@
     <br>
     <button type="submit">Submit</button>
 </form>
-<Calendar {assignments}></Calendar>
+
+<!-- Pass $assignments which is the array from the store -->
+<Calendar assignments={$assignments}></Calendar>

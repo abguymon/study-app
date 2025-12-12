@@ -1,8 +1,17 @@
 <script>
 	import { page } from '$app/stores';
 	import github from '$lib/images/github.svg';
-	import logo from '$lib/images/studdybuddylogowhite.png'
-	import transparent_logo from '$lib/images/logotransparent.png'
+	import { user } from '$lib/stores/auth';
+	import { auth } from '$lib/firebase';
+	import { signOut } from 'firebase/auth';
+
+	async function handleLogout() {
+		try {
+			await signOut(auth);
+		} catch (e) {
+			console.error(e);
+		}
+	}
 </script>
 
 <header>
@@ -28,6 +37,15 @@
 				<a href="/assignments">Assignments</a>
 			</li>
 			
+			{#if $user}
+				<li>
+					<button class="logout-btn" on:click={handleLogout}>Logout</button>
+				</li>
+			{:else}
+				<li aria-current={$page.url.pathname === '/login' ? 'page' : undefined}>
+					<a href="/login">Login</a>
+				</li>
+			{/if}
 			
 		</ul>
 	</nav>
@@ -100,7 +118,7 @@
 		border-top: var(--size) solid var(--color-theme-1);
 	}
 
-	nav a {
+	nav a, .logout-btn {
 		display: flex;
 		height: 100%;
 		align-items: center;
@@ -112,9 +130,12 @@
 		letter-spacing: 0.1em;
 		text-decoration: none;
 		transition: color 0.2s linear;
+        background: none;
+        border: none;
+        cursor: pointer;
 	}
 
-	a:hover {
+	a:hover, .logout-btn:hover {
 		color: var(--color-theme-1);
 	}
 </style>
