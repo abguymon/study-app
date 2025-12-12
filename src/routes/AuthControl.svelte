@@ -8,6 +8,7 @@
             await signOut(auth);
         } catch (e) {
             console.error(e);
+            alert('Failed to logout: ' + e.message);
         }
     }
 </script>
