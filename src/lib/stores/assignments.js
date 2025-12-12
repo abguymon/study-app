@@ -3,6 +3,7 @@ import { db } from "../firebase";
 import {
   collection,
   addDoc,
+  updateDoc,
   deleteDoc,
   doc,
   onSnapshot,
@@ -83,6 +84,24 @@ const createAssignmentsStore = () => {
             ...n,
             { ...assignment, id: Date.now().toString() },
           ];
+          if (typeof window !== "undefined") {
+            localStorage.setItem("assignments", JSON.stringify(newAssignments));
+          }
+          return newAssignments;
+        });
+      }
+    },
+    update: async (id, updatedFields) => {
+      if (currentUser) {
+        await updateDoc(doc(db, "assignments", id), updatedFields);
+      } else {
+        update((n) => {
+          const newAssignments = n.map((a) => {
+            if (a.id === id) {
+              return { ...a, ...updatedFields };
+            }
+            return a;
+          });
           if (typeof window !== "undefined") {
             localStorage.setItem("assignments", JSON.stringify(newAssignments));
           }
