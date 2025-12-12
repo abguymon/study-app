@@ -2,6 +2,35 @@
 
 This application uses Firebase for user authentication and data storage (Firestore). Follow these steps to set up your Firebase project and connect it to the application.
 
+## Quick Start: Automated Setup (Recommended)
+
+You can automate most of the Firebase setup using the provided script:
+
+```bash
+npm run setup:firebase
+```
+
+This script will:
+- Check for and install Firebase CLI if needed
+- Initialize Firebase in your project
+- Create Firestore security rules
+- Generate a `.env.example` file
+- Guide you through the remaining manual steps
+
+**Note:** You'll still need to manually:
+1. Create a Firebase project in the [Firebase Console](https://console.firebase.google.com/) (if you don't have one)
+2. Enable Authentication (Email/Password)
+3. Enable Firestore Database
+4. Get your Firebase configuration and add it to `.env`
+
+After running the script, continue with the manual steps below or follow the instructions provided by the script.
+
+---
+
+## Manual Setup (Alternative)
+
+If you prefer to set up Firebase manually, follow these steps:
+
 ## 1. Create a Firebase Project
 
 1. Go to the [Firebase Console](https://console.firebase.google.com/).
